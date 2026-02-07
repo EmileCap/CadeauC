@@ -1,107 +1,153 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Je t'aime ❤️</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Je t'aime ❤️</title>
 
-  <link rel="stylesheet" href="style/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="style/image/Icone.ico">
-</head>
-<body>
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="style/image/Icone.ico" />
+  </head>
+  <body>
+    <header>
+      <h1>❤️Saint Valentin❤️</h1>
+    </header>
 
-  <header>
-    <h1>&#10084; Saint Valentin &#10084;</h1>
-  </header>
+    <h1 class="Titre">Je t'aime Clarisse</h1>
 
-  <main class="main-grid">
+    <main class="main-grid">
 
-    <!-- BLOC 1 : Carrousel -->
-    <section class="block carrousel-block">
-      <h2>Juste la PLUS BELLe</h2>
-      <div class="carousel-container">
-        <div class="carousel-slide active">
-          <img src="style/image/2.jpg" alt="Moment 1">
+      <section class="block carrousel-block">
+        <div class="carousel-container">
+          <div class="carousel-slide active">
+            <img src="style/image/2.jpg" alt="Moment 1" />
+          </div>
+          <div class="carousel-slide">
+            <img src="style/image/1.jpg" alt="Moment 2" />
+          </div>
+          <div class="carousel-slide">
+            <img src="style/image/3.jpg" alt="Moment 3 ❤️" />
+          </div>
+
+          <button class="prev">&#10094;</button>
+          <button class="next">&#10095;</button>
         </div>
-        <div class="carousel-slide">
-          <img src="style/image/1.jpg" alt="Moment 2">
-        </div>
-        <div class="carousel-slide">
-          <img src="style/image/3.jpg" alt="Moment 3 ❤️">
-        </div>
+      </section>
 
-        <button class="prev">&#10094;</button>
-        <button class="next">&#10095;</button>
-      </div>
-    </section>
 
-    <!-- BLOC 2 : Compteur -->
-    <section class="block compteur-block">
-      <h2>Depuis qu’on est ensemble 💖</h2>
-      <p id="timer">0 jours 0 heures 0 minutes 0 secondes</p>
-    </section>
+      <section class="block compteur-block">
+        <h2>Depuis qu’on est ensemble 💖</h2>
+        <p id="timer">0 jours 0 heures 0 minutes 0 secondes</p>
+      </section>
 
-    <!-- BLOC 3 : Message -->
-    <section class="block">
-      <h2>Pour toi ❤️</h2>
-      <p>Ce site est juste un petit endroit rien qu’à nous, pour te dire à quel point tu comptes pour moi.</p>
-    </section>
 
-    <!-- BLOC 4 : Souvenirs -->
-    <section class="block">
-      <h2>Nos moments ✨</h2>
-      <p>Chaque instant avec toi est magique 🥰</p>
-    </section>
+      <section class="block">
+        <h2>Ce que j'aime chez toi</h2>
+        <br />
+        <p id="générationListe">TOUT</p>
+        <br />
+        <button id="btnGene">APPPUIEEEEEE</button>
+      </section>
 
-  </main>
 
-  <footer>
-    <p>Fait avec ❤️ rien que pour toi</p>
-  </footer>
+      <section class="block">
+        <h2>🍪 Cookies 🍪</h2>
 
-  <script>
-    // CARROUSEL
-    const slides = document.querySelectorAll(".carousel-slide");
-    const prevBtn = document.querySelector(".prev");
-    const nextBtn = document.querySelector(".next");
-    let currentIndex = 0;
+        <p>
+          <strong>Ingrédients</strong><br />
+          100 g beurre • 80 g sucre<br />
+          1 œuf • 150 g farine<br />
+          1/2 sachet levure • Pépites 🍫
+        </p>
 
-    function showSlide(index) {
-      slides.forEach(slide => slide.classList.remove("active"));
-      slides[index].classList.add("active");
-    }
+        <p>
+          <strong>Préparation</strong><br />
+          Mélange beurre + sucre<br />
+          Ajoute l’œuf<br />
+          Incorpore farine + levure<br />
+          Four 180°C – 10/12 min
+        </p>
 
-    prevBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        <p>Faits avec ❤️</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>Créer a la main pour la plus belle de toute les FEMMES ❤️</p>
+    </footer>
+
+    <script>
+      // CARROUSEL
+      const slides = document.querySelectorAll(".carousel-slide");
+      const prevBtn = document.querySelector(".prev");
+      const nextBtn = document.querySelector(".next");
+      let currentIndex = 0;
+
+      function showSlide(index) {
+        slides.forEach((slide) => slide.classList.remove("active"));
+        slides[index].classList.add("active");
+      }
+
+      prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+      });
+
+      nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+      });
+
       showSlide(currentIndex);
-    });
 
-    nextBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
-    });
+      // COMPTEUR
+      const startDate = new Date("2025-12-14T16:23:00");
+      const timerElement = document.getElementById("timer");
 
-    showSlide(currentIndex);
+      function updateTimer() {
+        const now = new Date();
+        const diff = now - startDate;
 
-    // COMPTEUR
-    const startDate = new Date("2025-12-14T16:23:00");
-    const timerElement = document.getElementById("timer");
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
 
-    function updateTimer() {
-      const now = new Date();
-      const diff = now - startDate;
+        timerElement.textContent = `${days} jours ${hours} heures ${minutes} minutes ${seconds} secondes`;
+      }
 
-      const days = Math.floor(diff / (1000*60*60*24));
-      const hours = Math.floor((diff / (1000*60*60)) % 24);
-      const minutes = Math.floor((diff / (1000*60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
+      setInterval(updateTimer, 1000);
+      updateTimer();
 
-      timerElement.textContent = `${days} jours ${hours} heures ${minutes} minutes ${seconds} secondes`;
-    }
+      let liste = [];
 
-    setInterval(updateTimer, 1000);
-    updateTimer();
-  </script>
-</body>
+      // Charger le fichier JSON
+      fetch("txt.json")
+        .then((response) => response.json())
+        .then((data) => {
+          liste = data.liste;
+        })
+        .catch((error) => {
+          console.error("Erreur lors du chargement du JSON :", error);
+        });
+
+      // Bouton
+      const bouton = document.getElementById("btnGene");
+      const texte = document.getElementById("générationListe");
+
+      bouton.addEventListener("click", () => {
+        if (liste.length === 0) {
+          texte.textContent = "Chargement en cours...";
+          return;
+        }
+
+        const aleatoire = Math.floor(Math.random() * liste.length);
+        texte.textContent = liste[aleatoire];
+      });
+    </script>
+  </body>
 </html>
