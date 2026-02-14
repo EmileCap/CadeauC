@@ -154,15 +154,12 @@ footer {
   color: #7a0019;
 }
 
+
 /* ========================= */
-/* RESPONSIVE MOBILE */
+/* RESPONSIVE MOBILE PROPRE */
 /* ========================= */
 
 @media (max-width: 900px) {
-
-  body {
-    padding: 0 10px;
-  }
 
   header h1 {
     font-size: 2rem;
@@ -175,50 +172,46 @@ footer {
   }
 
   .main-grid {
-    grid-template-columns: 1fr;   /* UNE SEULE COLONNE */
-    grid-template-rows: auto;
+    grid-template-columns: 1fr; /* UNE SEULE COLONNE */
     gap: 20px;
-    padding: 20px 0;
+    padding: 20px;
   }
 
   .block {
-    aspect-ratio: auto;      /* IMPORTANT : enlève le carré */
-    padding: 20px;
-    min-height: 250px;
+    width: 100%;
+    max-width: 400px;  /* évite que ça soit gigantesque */
+    margin: 0 auto;
+    aspect-ratio: 1 / 1; /* ON GARDE LE CARRE */
   }
 
   .block h2 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .block p {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   /* Carrousel */
   .carousel-container {
-    height: 300px;
+    width: 100%;
+    height: 100%;
   }
 
   .carousel-slide img {
+    width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* IMPORTANT */
   }
 
-  /* Boutons carrousel */
+  /* Boutons */
+  button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
   .prev, .next {
     font-size: 1.5rem;
-    padding: 8px 12px;
-  }
-
-  /* Bouton génération */
-  button {
-    font-size: 1rem;
-    padding: 12px;
-  }
-
-  footer {
-    font-size: 0.9rem;
-    padding: 15px;
+    padding: 6px 12px;
   }
 }
